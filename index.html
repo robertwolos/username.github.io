@@ -11,6 +11,7 @@
             padding: 0;
             background-color: #e0f7fa; /* Jasny niebieski */
             color: #333;
+            scroll-behavior: smooth;
         }
         .container {
             width: 80%;
@@ -51,6 +52,9 @@
             background-color: #0056b3;
             padding: 10px;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         .navbar a {
             color: white;
@@ -74,6 +78,31 @@
         .back-to-top:hover {
             background-color: #003d99;
         }
+        .portfolio {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .portfolio img {
+            width: calc(33.333% - 20px);
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .portfolio img:hover {
+            transform: scale(1.05);
+        }
+        .card {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
         @media (max-width: 768px) {
             .container {
                 width: 95%;
@@ -81,6 +110,9 @@
             .navbar a {
                 display: block;
                 margin: 10px 0;
+            }
+            .portfolio img {
+                width: 100%;
             }
         }
     </style>
@@ -90,6 +122,7 @@
         <a href="#about">About me</a>
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
+        <a href="#portfolio">Portfolio</a>
         <a href="#contact">Contact</a>
     </div>
     <div class="container">
@@ -99,30 +132,45 @@
         <p>I work in agile projects and more. I am expanding my interests to include cloud technologies, especially AWS.</p>
         
         <h2 id="experience">Experience</h2>
-        <h3>Tech Lead BI Team, Qarson</h3>
-        <p>Modern Workflow Orchestration Prefect is the modern Airflow replacement for building, observing, and reacting to your workflows.</p>
-        <p><a href="https://docs.prefect.io/latest/" target="_blank">Docs</a></p>
+        <div class="card">
+            <h3>Tech Lead BI Team, Qarson</h3>
+            <p>Modern Workflow Orchestration Prefect is the modern Airflow replacement for building, observing, and reacting to your workflows.</p>
+            <p><a href="https://docs.prefect.io/latest/" target="_blank">Docs</a></p>
+        </div>
         
-        <h3>Data Analysis</h3>
-        <p>Atlas Cloud is an online platform that supplements the Atlas CLI to allow teams to build robust, end-to-end schema management workflows. We built it to help teams make the most out of Atlas with as little friction and effort as possible.</p>
-        <p><a href="https://atlasgo.io/cloud/getting-started" target="_blank">Docs</a></p>
+        <div class="card">
+            <h3>Data Analysis</h3>
+            <p>Atlas Cloud is an online platform that supplements the Atlas CLI to allow teams to build robust, end-to-end schema management workflows. We built it to help teams make the most out of Atlas with as little friction and effort as possible.</p>
+            <p><a href="https://atlasgo.io/cloud/getting-started" target="_blank">Docs</a></p>
+        </div>
 
         <h2 id="skills">Skills</h2>
-        <h3>Technical:</h3>
-        <ul>
-            <li>Programming: Python, Java, C#</li>
-            <li>Database: Oracle, PostgreeSQL, MySQL, MongoDB</li>
-            <li>Cloud technologies: AWS, Azure, Google</li>
-            <li>Tools: Git, Docker, Prefect</li>
-        </ul>
+        <div class="card">
+            <h3>Technical:</h3>
+            <ul>
+                <li>Programming: Python, Java, C#</li>
+                <li>Database: Oracle, PostgreeSQL, MySQL, MongoDB</li>
+                <li>Cloud technologies: AWS, Azure, Google</li>
+                <li>Tools: Git, Docker, Prefect</li>
+            </ul>
+        </div>
 
-        <h3>Soft:</h3>
-        <ul>
-            <li>Communication</li>
-            <li>Time management</li>
-            <li>Teamwork</li>
-            <li>Troubleshooting</li>
-        </ul>
+        <div class="card">
+            <h3>Soft:</h3>
+            <ul>
+                <li>Communication</li>
+                <li>Time management</li>
+                <li>Teamwork</li>
+                <li>Troubleshooting</li>
+            </ul>
+        </div>
+
+        <h2 id="portfolio">Portfolio</h2>
+        <div class="portfolio">
+            <img src="project1.jpg" alt="Project 1">
+            <img src="project2.jpg" alt="Project 2">
+            <img src="project3.jpg" alt="Project 3">
+        </div>
 
         <h2 id="contact">Contact</h2>
         <div class="contact">
@@ -130,6 +178,17 @@
             <a href="https://linkedin.com/in/robert-wołos-9a879abb" target="_blank">LinkedIn</a>
             <a href="https://github.com/robertwolos" target="_blank">GitHub</a>
         </div>
+
+        <h2>Contact Form</h2>
+        <form action="https://formspree.io/f/your-form-id" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" required></textarea><br>
+            <input type="submit" value="Send">
+        </form>
     </div>
     <div class="back-to-top" onclick="scrollToTop()">Back to top</div>
     <script>
