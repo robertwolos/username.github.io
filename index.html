@@ -92,14 +92,16 @@
         .portfolio img:hover {
             transform: scale(1.05);
         }
-        .card {
+        .portfolio .article {
+            flex: 1 1 calc(33.333% - 20px);
             background: #f5f5f5;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
         }
-        .card:hover {
+        .portfolio .article:hover {
             transform: translateY(-5px);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
         }
@@ -222,14 +224,23 @@
 
         <h2 id="portfolio">Portfolio</h2>
         <div class="portfolio">
-            <img src="project1.jpg" alt="Project 1">
-            <img src="project2.jpg" alt="Project 2">
-            <img src="project3.jpg" alt="Project 3">
+            <div class="article">
+                <h3>Scrum w akcji</h3>
+                <p><a href="https://blog.onwelo.pl/scrum-w-akcji/" target="_blank">Read More</a></p>
+            </div>
+            <div class="article">
+                <h3>Zwinne zarządzanie projektami – algorytm na sukces</h3>
+                <p><a href="https://blog.onwelo.pl/zwinne-zarzadzanie-projektami-algorytm-na-sukces/">Read More</a></p>
+            </div>
+            <div class="article">
+                <h3>Article Title 3</h3>
+                <p><a href="https://www.linkedin.com/link-to-article-3" target="_blank">Read More</a></p>
+            </div>
         </div>
 
         <h2 id="contact">Contact</h2>
         <div class="contact">
-            <a href="mailto:robertwolos@example.com">robertwolos@example.com</a>
+            <a href="mailto:robertwolos@gmail.com">robertwolos@gmail.com</a>
             <a href="https://linkedin.com/in/robert-wołos-9a879abb" target="_blank">LinkedIn</a>
             <a href="https://github.com/robertwolos" target="_blank">GitHub</a>
         </div>
