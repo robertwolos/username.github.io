@@ -181,14 +181,22 @@
         <h2 id="experience">Experience</h2>
         <div class="card">
             <h3>Tech Lead BI Team, Qarson</h3>
-            <p>Modern Workflow Orchestration Prefect is the modern Airflow replacement for building, observing, and reacting to your workflows.</p>
-            <p><a href="https://docs.prefect.io/latest/" target="_blank">Docs</a></p>
+            <p>October 2022 - Present</p>
+            <p>Leading the Business Intelligence team to develop modern workflow orchestration solutions. Utilized Prefect as the modern Airflow replacement for building, observing, and reacting to workflows.</p>
+            <p><a href="https://docs.prefect.io/latest/" target="_blank">Prefect Documentation</a></p>
         </div>
         
         <div class="card">
             <h3>Data Analysis</h3>
-            <p>Atlas Cloud is an online platform that supplements the Atlas CLI to allow teams to build robust, end-to-end schema management workflows. We built it to help teams make the most out of Atlas with as little friction and effort as possible.</p>
-            <p><a href="https://atlasgo.io/cloud/getting-started" target="_blank">Docs</a></p>
+            <p>March 2018 - October 2022</p>
+            <p>Developed data analysis solutions using Atlas Cloud to manage robust, end-to-end schema management workflows. Helped teams make the most out of Atlas with as little friction and effort as possible.</p>
+            <p><a href="https://atlasgo.io/cloud/getting-started" target="_blank">Atlas Cloud Documentation</a></p>
+        </div>
+
+        <div class="card">
+            <h3>Data Engineer, ABC Company</h3>
+            <p>January 2015 - March 2018</p>
+            <p>Built and maintained data pipelines, ensuring data integrity and availability for analytics. Worked closely with data scientists and analysts to support data-driven decision making.</p>
         </div>
 
         <h2 id="skills">Skills</h2>
@@ -196,8 +204,8 @@
             <h3>Technical:</h3>
             <ul>
                 <li>Programming: Python, Java, C#</li>
-                <li>Database: Oracle, PostgreeSQL, MySQL, MongoDB</li>
-                <li>Cloud technologies: AWS, Azure, Google</li>
+                <li>Database: Oracle, PostgreSQL, MySQL, MongoDB</li>
+                <li>Cloud technologies: AWS, Azure, Google Cloud</li>
                 <li>Tools: Git, Docker, Prefect</li>
             </ul>
         </div>
@@ -245,3 +253,30 @@
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+
+        // Pokazuj przycisk powrotu do góry po przewinięciu
+        window.onscroll = function() {
+            const backToTopButton = document.querySelector('.back-to-top');
+            if (document.documentElement.scrollTop > 100) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        };
+
+        // Funkcja aktualizacji czasu
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+
+        // Aktualizuj czas co sekundę
+        setInterval(updateClock, 1000);
+        // Ustaw początkowy czas
+        updateClock();
+    </script>
+</body>
+</html>
