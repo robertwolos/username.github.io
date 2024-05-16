@@ -103,6 +103,15 @@
             transform: translateY(-5px);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
         }
+        .clock {
+            font-size: 1.5em;
+            text-align: center;
+            padding: 20px;
+            background: #0056b3;
+            color: white;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
         @media (max-width: 768px) {
             .container {
                 width: 95%;
@@ -128,6 +137,7 @@
     <div class="container">
         <h1>Robert Wołos</h1>
         <img src="profile.jpg" alt="Profile Picture">
+        <div class="clock" id="clock">00:00:00</div>
         <h2 id="about">About me</h2>
         <p>I work in agile projects and more. I am expanding my interests to include cloud technologies, especially AWS.</p>
         
@@ -174,7 +184,7 @@
 
         <h2 id="contact">Contact</h2>
         <div class="contact">
-            <a href="mailto:robertwolos@example.com">robertwolos@example.com</a>
+            <a href="mailto:robertwolos@gmail.com">robertwolos@gmail.com</a>
             <a href="https://linkedin.com/in/robert-wołos-9a879abb" target="_blank">LinkedIn</a>
             <a href="https://github.com/robertwolos" target="_blank">GitHub</a>
         </div>
@@ -206,6 +216,20 @@
                 backToTopButton.style.display = 'none';
             }
         };
+
+        // Funkcja aktualizacji czasu
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+
+        // Aktualizuj czas co sekundę
+        setInterval(updateClock, 1000);
+        // Ustaw początkowy czas
+        updateClock();
     </script>
 </body>
 </html>
