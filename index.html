@@ -112,6 +112,40 @@
             border-radius: 10px;
             margin: 20px 0;
         }
+        .form-container {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .form-container input,
+        .form-container textarea {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .form-container input[type="submit"] {
+            width: 100%;
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #003d99;
+        }
         @media (max-width: 768px) {
             .container {
                 width: 95%;
@@ -190,15 +224,17 @@
         </div>
 
         <h2>Contact Form</h2>
-        <form action="https://formspree.io/f/your-form-id" method="POST">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required><br>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br>
-            <label for="message">Message:</label><br>
-            <textarea id="message" name="message" rows="4" required></textarea><br>
-            <input type="submit" value="Send">
-        </form>
+        <div class="form-container">
+            <form action="https://formspree.io/f/your-form-id" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <input type="submit" value="Send">
+            </form>
+        </div>
     </div>
     <div class="back-to-top" onclick="scrollToTop()">Back to top</div>
     <script>
@@ -207,38 +243,4 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Pokazuj przycisk powrotu do góry po przewinięciu
-        window.onscroll = function() {
-            const backToTopButton = document.querySelector('.back-to-top');
-            if (document.documentElement.scrollTop > 100) {
-                backToTopButton.style.display = 'block';
-            } else {
-                backToTopButton.style.display = 'none';
-            }
-        };
-
-        // Funkcja aktualizacji czasu
-        function updateClock() {
-            const now = new Date();
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            const seconds = String(now.getSeconds()).padStart(2, '0');
-            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
-        }
-
-        // Aktualizuj czas co sekundę
-        setInterval(updateClock, 1000);
-        // Ustaw początkowy czas
-        updateClock();
-    </script>
-</body>
-</html>
-
-
-
-
-
-
-
-
-
+     
